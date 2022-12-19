@@ -2,9 +2,6 @@ package ru.kata.spring.boot_security.demo.model;
 
 import org.springframework.security.core.GrantedAuthority;
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -19,10 +16,6 @@ public class Role implements GrantedAuthority {
     @Column(name = "name")
     @NotEmpty(message = "Name of role should not be empty")
     private String name;
-
-    @Transient
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "roles", cascade = CascadeType.MERGE)
-    private List<User> users = new ArrayList<>();
 
     public Role() {}
 
