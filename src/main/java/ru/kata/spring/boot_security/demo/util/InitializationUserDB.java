@@ -33,13 +33,17 @@ public class InitializationUserDB {
         roleService.save(role1);
         roleService.save(role2);
 
-        Set<Role> set = new HashSet<>();
-        set.add(role1);
-        set.add(role2);
+        Set<Role> set1 = new HashSet<>();
+        set1.add(role1);
+        set1.add(role2);
 
-        User user1 = new User(new BCryptPasswordEncoder(8).encode("admin"), "Вадим", "Деречин", 20, "Отсутствует",  "testMail@gmail.com", set);
+        User user1 = new User(new BCryptPasswordEncoder(8).encode("admin"), "Вадим", "Деречин", 20, "Отсутствует",  "testMail@gmail.com", set1);
+        Set<Role> set2 = new HashSet<>();
+        set2.add(role2);
+        User user2 = new User(new BCryptPasswordEncoder(8).encode("user"), "Вадим", "Деречин", 20, "Отсутствует",  "user@gmail.com", set2);
 
         userService.save(user1);
+        userService.save(user2);
 
     }
 }

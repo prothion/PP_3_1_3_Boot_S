@@ -47,6 +47,10 @@
         <input th:name="age" th:type="number" id="age" placeholder="Enter age"><br>
         <div style="color:gray" th:if="${#fields.hasErrors('age')}" th:errors="*{user.age}">Error text</div><br>
 
+        <label for="car">Car</label>
+        <input th:type="text" th:name="car" id="car" placeholder="Enter car"><br>
+        <div style="color:gray" th:if="${#fields.hasErrors('car')}" th:errors="*{car}">Error text</div><br>
+
         <label for="email">Email</label>
         <input th:name="email" th:type="text" id="email" placeholder="Enter email"><br>
         <div style="color:gray" th:if="${#fields.hasErrors('email')}" th:errors="*{user.email}">Error text</div><br>
